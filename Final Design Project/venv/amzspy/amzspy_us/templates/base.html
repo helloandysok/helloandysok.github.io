@@ -1,0 +1,88 @@
+<!-- GetBootstrap template by getbootstrap.com, Design by Andy Sok-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+      <!-- Page name -->
+    <title>AMZSPY - Amazon Product Price Tracker By Andy Sok</title>
+
+  </head>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222e3e;">
+  <a class="navbar-brand" href="{% url 'home' %}">AMZSPY By Andy Sok</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#how">How It Works</a>
+      <a class="nav-item nav-link" href="https://github.com/helloandysok/helloandysok.github.io">Documentation</a>
+        <a class="nav-item nav-link" href="mailto:contact@amzspy.us">Need Help? Email us: contact@amzspy.us</a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+      <br>
+        <h2 class="text-primary">WELCOME TO AMZSPY</h2>
+        <h4>The Newest Amazon Price Tracking Tool!</h4>
+      <br>
+        <p>Simple & Easy To Use!</p>
+        <p>Just Enter Your Amazon Product URL & Email Down Below:</p>
+      </br>
+
+        <!--img src="AMZ.png" class="img-fluid" alt="amzspy.png"-->
+    <form method="POST">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="inputurl">Enter Your Amazon Product URL: </label>
+    <input type="amzurl" name="amzurl" class="form-control" id="inputurl" aria-describedby="amz">
+    <small id="amz" class="form-text text-muted">Copy & Pasting Makes It 100% Easier For Both of Us.</small>
+  </div>
+  <div class="form-group">
+    <label for="email">Enter Your Email: </label>
+    <input type="email" name="email" class="form-control" id="email">
+      <small id="emailmsg" class="form-text text-muted">We will NEVER spam you. We HATE spam.</small>
+
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="check">
+    <label class="form-check-label" for="check">Check here to get discounts on similar items sent to your inbox.</label>
+  </div>
+  <button onclick="location.href='{% url 'home' %}'" type="submit" class="btn btn-primary">Track My Amazon Product</button>
+    </form>
+    <div style="padding-top:25px;">
+    {% block content %}
+      {% endblock %}
+      </div>
+
+      </br>
+
+      <!-- In-app help section -->
+      <div class="p-3 mb-2 text-white" style="background-color:#222e3e;" >
+      <br>
+          <div class="container">
+          <h4 id="how">How AMZSPY Works:</h4>
+        <p>1. You copy & paste your Amazon Product URL.</p>
+        <p>2. We scrape the data for you.</p>
+        <p>3. You input your desired discount amount.</p>
+        <p>4. Enter your email.</p>
+        <p>5. We send you an email when your product has a lower price! VOILA!</p>
+      </div>
+      </div>
+      <p class="text-muted" style="padding-top:25px;">By submitting a form, we may be compensated for sales derived through this website at no extra cost to you.</p>
+  </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

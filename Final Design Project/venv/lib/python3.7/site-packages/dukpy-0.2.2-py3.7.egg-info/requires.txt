@@ -1,0 +1,8 @@
+
+[testing]
+coveralls
+nose
+mock
+
+[webassets]
+webassets
