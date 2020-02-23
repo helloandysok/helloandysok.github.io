@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- bootstrap flashing message -->
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-warning alert-dismissable" role=""alert>
+            <button class="close" data-dismiss="alert">
+                <small><sup>Close</sup></small>
+            </button>
+            {{message}}
+        </div>
+    {% endfor %}
+{% endif %}
+
+
+
+
+{% endblock %}
